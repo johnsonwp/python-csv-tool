@@ -1,7 +1,6 @@
 # -*- coding: utf-8 -*-
 # !/usr/bin/env python
 import csv
-from itertools import islice
 
 
 def rows_to_csv(filepath, rows, columns=[]):
@@ -13,7 +12,7 @@ def rows_to_csv(filepath, rows, columns=[]):
 
         columns(list):
             A list of the key in the rows that you want to export in the csv file
-            by defult it will display all
+            by default it will display all
 
     """
     csv_columns = columns
@@ -84,7 +83,8 @@ def get_initials_dic(rows):
             if not is_initial_exist(init_dict, initial):
                 break
             for c in name_split[0][1:]:
-                print('Exist Found {}, Next is {}{}, Dict is {}'.format(initial, name_split[0][:1].upper(), c.upper(), init_dict.items()))
+                print('Exist Found {}, Next is {}{}, Dict is {}'
+                      .format(initial, name_split[0][:1].upper(), c.upper(), init_dict.items()))
                 initial = name_split[0][:1].upper() + c.upper()
                 if not is_initial_exist(init_dict, initial):
                     break
